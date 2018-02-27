@@ -3,7 +3,7 @@
 <h1>Usernames</h1>
 
 <body>
-
+<!--
 <?php
 //Connecting, selecting database
 $dbconn = pg_connect("host=localhost dbname=postgres user=postgres password=wlseprl1");
@@ -32,6 +32,14 @@ echo "</table>";
 
 pg_close($dbconn);
 ?>
+-->
+
+<table border="0">
+<tr>
+	<th>Username</th>
+	<th><?php echo $_POST["un"]; ?></th>
+</tr>
+</table>
 
 <table border="0">
 <tr>

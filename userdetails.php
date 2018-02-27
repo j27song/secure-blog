@@ -3,13 +3,12 @@
 <h1>User List</h1>
 
 <body>
-
+<!--
 <?php 
 	$username = $_POST['un']; 
 	$email = $_POST['em'];
-	$address = $_POST['add'];
-	$phonenum = $_POST['pn'];
-	$ubio = $_POST['ub'];
+	$password = $_POST['pw'];
+	
 	
 //Connecting, selecting database
 $dbconn = pg_connect("host=localhost dbname=postgres user=postgres password=wlseprl1");
@@ -22,16 +21,15 @@ $dbconn = pg_connect("host=localhost dbname=postgres user=postgres password=wlse
 	$un_regex = '/^[a-zA-Z]+$/';
 	$em_regex = '/[\w\.\-]+@[\w\-]+\.[a-zA-Z\.]+/';
 	$ad_regex = '/[a-zA-Z][0-9][a-zA-Z](\ |)[0-9][a-zA-Z][0-9]/';
-	$pn_regex = '/([\-\.\(\)]|)\d\d\d([\-\.\(\)]|)\d\d\d([\-\.\(\)]|)\d\d\d\d/';
 
 	preg_match_all($un_regex, $username, $matches1, PREG_SET_ORDER, 0);
 	preg_match_all($em_regex, $email, $matches2, PREG_SET_ORDER, 0);
-	preg_match_all($ad_regex, $address, $matches3, PREG_SET_ORDER, 0);
-	preg_match_all($pn_regex, $phonenum, $matches4, PREG_SET_ORDER, 0);
+	//preg_match_all($ad_regex, $password, $matches3, PREG_SET_ORDER, 0);
 
-	$query = "insert into users values ('$username','$email','$address','$phonenum','$ubio')";
+
+	$query = "insert into users values ('$username','$email','$password')";
 	
-	if (($matches1[0][0] && $matches2[0][0] && $matches3[0][0] && $matches4[0][0]) != null){
+	if (($matches1[0][0] && $matches2[0][0]) != null){
 		$result = pg_query($query);
 			if ($result){
 				echo "Records successfully inserted.\n";
@@ -51,23 +49,33 @@ echo "<table border='1'>";
 	echo "<tr>";
 		echo "<th>Username</th>";
 		echo "<th>Email</th>";
-		echo "<th>Address</th>";
-		echo "<th>Phone Number</th>";
-		echo "<th>User Bio</th>";
+		
 	echo "</tr>";
 	while ($row = pg_fetch_row($result)){
 	echo "<tr>";
 		echo "<th>$row[0]</th>";
 		echo "<th>$row[1]</th>";
 		echo "<th>$row[2]</th>";		
-		echo "<th>$row[3]</th>";
-		echo "<th>$row[4]</th>";
 	echo "</tr>";
 	}
 echo "</table>";
 
 pg_close($dbconn);
 ?>
+-->
+
+<table border="0">
+<tr>
+	<td>Username</td>
+	<td>Email</td>
+	<td>Password</td>
+</tr>
+<tr>
+	<td><?php echo $_POST["un"]; ?></td>
+	<td><?php echo $_POST["em"]; ?></td>
+	<td><?php echo $_POST["pw"]; ?></td>
+</tr>
+</table>
 
 <table border="0">
 <tr>
