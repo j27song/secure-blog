@@ -2,11 +2,17 @@
 //to add a post to the blog
 if (!empty ($_POST)){
 	include 'sqlcom.php';
-	if (pg_query("insert into blog_posts (ptitle, pbody, pdate) values (%s, %s, %s)", $_POST['title'], $_POST['body'], time())){
+	$pt = $_POST['title'];
+	$pb = $_POST['body'];
+	$da = date("d-m-Y");
+	//echo "\n" .$pt. " " .$pb. " " .$da. "\n";
+	//('$pt', '$pb', '$da')");
+	$query = pg_query("insert into blog_posts (ptitle, pbody, pdate) values ('$pt', '$pb', '$da')");
+	if ($query){
 		echo "Post added successfully.";
 	} else {
 		echo "Query failed: " . pg_last_error();
-	}	
+	}
 }
 
 ?>
