@@ -1,13 +1,13 @@
 <?php //include config
 require_once('../includes/config.php');
 //if not logged in redirect to login page
-if(!$user->is_logged_in()){ header('Location: login.php'); }
+//if(!$user->is_logged_in()){ header('Location: login.php'); }
 ?>
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Admin - Add User</title>
+  <title>Register</title>
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/main.css">
 </head>
