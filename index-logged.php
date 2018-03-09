@@ -1,4 +1,5 @@
 <?php require('includes/config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +12,18 @@
 
 	<div id="wrapper">
 
-		<h1>J&J's Blog</h1>
-		<p>Logged in as <?=$_SESSION['username'];?></p>
-		<ul id='adminmenu'>
-		<li><a href='admin/index.php'>Blog Management</a></li>
-		<!-- <li><a href='users.php'>Users</a></li> -->
-		<li><a href='admin/logout.php'>Logout</a></li>
-		</ul>
-		<br/>
-		<hr />
-
 		<?php
+			$username = $_SESSION['username']; 
+			$stmt = $db->query("SELECT mid FROM blog_members where username = '$username'");
+			$row = $stmt->fetch();
+			$id = $row['mid'];
+			if ($id == 1){
+				include('admin/menu-admin.php');
+			}
+			else{
+				include('admin/menu.php');
+			}
+	
 			try {
 				$stmt = $db->query('SELECT pid, ptitle, pdesc, pdate FROM blog_post ORDER BY pid DESC');
 				while($row = $stmt->fetch()){
