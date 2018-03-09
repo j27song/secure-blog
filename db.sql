@@ -3,7 +3,8 @@ pID serial PRIMARY KEY,
 pTitle varchar(255) NOT NULL,
 pDesc text NOT NULL,
 pCont text NOT NULL,
-pDate date NOT NULL);
+pDate date NOT NULL,
+mid int);
 CREATE TABLE
 
 create table blog_members(
