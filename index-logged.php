@@ -1,6 +1,4 @@
-<?php require('includes/config.php'); 
-if($user->is_logged_in()){ header('Location: index-logged.php'); }
-?>
+<?php require('includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +11,13 @@ if($user->is_logged_in()){ header('Location: index-logged.php'); }
 
 	<div id="wrapper">
 
-		<h1>Blog</h1>
-
 		<h1>J&J's Blog</h1>
-
 		<ul id='adminmenu'>
-		<li><a href="admin/add-user.php">Register</a></li>
-		<li><a href="admin/login.php">Login</a></li>
-		</ul>		
+		<li><a href='admin/index.php'>Blog Management</a></li>
+		<!-- <li><a href='users.php'>Users</a></li> -->
+		<li><a href='admin/logout.php'>Logout</a></li>
+		</ul>
 		<br/>
-
 		<hr />
 
 		<?php
