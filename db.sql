@@ -17,3 +17,7 @@ CREATE TABLE
 
 alter table blog_post add foreign key (mid) references blog_members(mid);
 ALTER TABLE
+
+alter table blog_members add column reset boolean default false;
+ALTER TABLE
+
