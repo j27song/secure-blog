@@ -2,14 +2,14 @@
 //include config
 require_once('../includes/config.php');
 //check if already logged in
-if( $user->is_logged_in() ){ header('Location: index.php'); } 
+//if( $user->is_logged_in() ){ header('Location: index.php'); } 
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Admin Login</title>
+  <title>Login</title>
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/main.css">
 </head>
