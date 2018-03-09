@@ -20,6 +20,13 @@ function __autoload($class) {
    
    $class = strtolower($class);
 
+//set timezone
+date_default_timezone_set('Canada/Toronto');
+
+function __autoload($class) {
+   
+   $class = strtolower($class);
+
 	//if call from within assets adjust the path
    $classpath = 'classes/class.'.$class . '.php';
    if ( file_exists($classpath)) {

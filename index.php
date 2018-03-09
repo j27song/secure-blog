@@ -12,6 +12,9 @@
 	<div id="wrapper">
 
 		<h1>Blog</h1>
+
+		<h1>J&J's Blog</h1>
+
 		<a href="admin/add-user.php">Register</a></br>
 		<a href="admin/login.php">Login</a>
 		<hr />
