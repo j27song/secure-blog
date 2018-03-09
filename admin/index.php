@@ -49,7 +49,7 @@ if(isset($_GET['delpost'])){
 	</tr>
 	<?php
 		try {
-			$stmt = $db->query('SELECT pID, pTitle, pDate FROM blog_post ORDER BY ptID DESC');
+			$stmt = $db->query('SELECT pID, pTitle, pDate FROM blog_post ORDER BY pID DESC');
 			while($row = $stmt->fetch()){
 				
 				echo '<tr>';
