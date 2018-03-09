@@ -35,7 +35,7 @@ if(isset($_GET['deluser'])){
 
 	<div id="wrapper">
 
-	<?php include('menu.php');?>
+	<?php include('menu-admin.php');?>
 
 	<?php 
 	//show message from add / edit page
