@@ -11,21 +11,21 @@
 
 	<div id="wrapper">
 
-		<h1>Blog</h1>
+		<h1>J&J's Blog</h1>
 		<a href="admin/add-user.php">Register</a></br>
 		<a href="admin/login.php">Login</a>
 		<hr />
 
 		<?php
 			try {
-				$stmt = $db->query('SELECT pID, pTitle, pDesc, pDate FROM blog_post ORDER BY pID DESC');
+				$stmt = $db->query('SELECT pid, ptitle, pdesc, pdate FROM blog_post ORDER BY pid DESC');
 				while($row = $stmt->fetch()){
 					
 					echo '<div>';
-						echo '<h1><a href="viewpost.php?id='.$row['pID'].'">'.$row['pTitle'].'</a></h1>';
-						echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['pDate'])).'</p>';
-						echo '<p>'.$row['pDesc'].'</p>';				
-						echo '<p><a href="viewpost.php?id='.$row['postID'].'">Read More</a></p>';				
+						echo '<h1><a href="viewpost.php?id='.$row['pid'].'">'.$row['ptitle'].'</a></h1>';
+						echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['pdate'])).'</p>';
+						echo '<p>'.$row['pdesc'].'</p>';				
+						echo '<p><a href="viewpost.php?id='.$row['pid'].'">Read More</a></p>';				
 					echo '</div>';
 				}
 			} catch(PDOException $e) {
