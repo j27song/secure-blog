@@ -15,7 +15,7 @@ require_once('../includes/config.php');
 
 <div id="wrapper">
 
-	<?php include('menu.php');?>
+	<?php include('menu-guest.php');?>
 	<!-- <p><a href="users.php">User Admin Index</a></p> -->
 
 	<h2>Add User</h2>
