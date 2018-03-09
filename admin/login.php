@@ -10,7 +10,6 @@ require_once('../includes/config.php');
 <head>
   <meta charset="utf-8">
   <title>Login</title>
-  <h1 align="center">Login Page</h1>
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/main.css">
 </head>
@@ -24,6 +23,15 @@ require_once('../includes/config.php');
 		$username = trim($_POST['username']);
 		$password = trim($_POST['password']);
 		
+		$stmt = $db->query("SELECT verify FROM blog_members where username = '$username'");
+		$row = $stmt->fetch();
+		$verify = $row['verify'];
+		
+		if(!$verify){
+			header('Location: verify.php');
+			exit;
+		} 
+		
 		if($user->login($username,$password)){ 
 			//logged in return to index page
 			header('Location: index.php');
@@ -35,6 +43,7 @@ require_once('../includes/config.php');
 	}//end if submit
 	if(isset($message)){ echo $message; }
 	?>
+	
 	<h1 align="center">Login Page</h1>
   	<hr align="center">
 	<form action="" method="post">

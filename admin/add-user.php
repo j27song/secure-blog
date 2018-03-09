@@ -52,7 +52,8 @@ require_once('../includes/config.php');
 					':email' => $email
 				));
 				//redirect to index page
-				header('Location: users.php?action=added');
+				//header('Location: users.php?action=added');
+				header('Location: verify.php?action=added');
 				exit;
 			} catch(PDOException $e) {
 			    echo $e->getMessage();
@@ -81,7 +82,9 @@ require_once('../includes/config.php');
 		<p><label>Email</label><br />
 		<input type='text' name='email' value='<?php if(isset($error)){ echo $_POST['email'];}?>'></p>
 		
+		<form action="verify.php">
 		<p><input type='submit' name='submit' value='Submit'></p>
+		</form>
 
 	</form>
 
