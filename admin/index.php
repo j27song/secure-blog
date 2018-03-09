@@ -54,7 +54,7 @@ if(isset($_GET['delpost'])){
 				
 				echo '<tr>';
 				echo '<td>'.$row['ptitle'].'</td>';
-				echo '<td>'.date('jS M Y', strtotime($row['pDate'])).'</td>';
+				echo '<td>'.date('jS M Y', strtotime($row['pdate'])).'</td>';
 				?>
 
 				<td>
