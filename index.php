@@ -12,6 +12,8 @@
 	<div id="wrapper">
 
 		<h1>Blog</h1>
+		<a href="admin/add-user.php">Register</a></br>
+		<a href="admin/login.php">Login</a>
 		<hr />
 
 		<?php
