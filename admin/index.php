@@ -34,7 +34,7 @@ if(isset($_GET['delpost'])){
 
 	<?php include('menu.php');?>
 
-	<?php 
+	<?php
 	//show message from add / edit page
 	if(isset($_GET['action'])){ 
 		echo '<h3>Post '.$_GET['action'].'.</h3>'; 
@@ -47,9 +47,18 @@ if(isset($_GET['delpost'])){
 		<th>Date</th>
 		<th>Action</th>
 	</tr>
-	<?php
+	<?php		
+	
+	$username = $_SESSION['username'];
+	//echo "This is a test, the username name is $username"
+
+	$stmt = $db->query("SELECT mid FROM blog_members where username = '$username'");
+	$row = $stmt->fetch();
+	$id = $row['mid'];
+	//echo "The member id is $id"; 	
 		try {
-			$stmt = $db->query('SELECT pid, ptitle, pdate FROM blog_post ORDER BY pid DESC');
+			
+			$stmt = $db->query("SELECT pid, ptitle, pdate FROM blog_post WHERE mid = '$id' ORDER BY pid DESC");
 			while($row = $stmt->fetch()){
 				
 				echo '<tr>';
