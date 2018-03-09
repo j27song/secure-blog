@@ -18,7 +18,7 @@ require_once('../includes/config.php');
 	<?php include('menu-guest.php');?>
 	<!-- <p><a href="users.php">User Admin Index</a></p> -->
 
-	<h2>Add User</h2>
+	<h2>Register</h2>
 
 	<?php
 	//if form has been submitted process it
@@ -81,7 +81,7 @@ require_once('../includes/config.php');
 		<p><label>Email</label><br />
 		<input type='text' name='email' value='<?php if(isset($error)){ echo $_POST['email'];}?>'></p>
 		
-		<p><input type='submit' name='submit' value='Add User'></p>
+		<p><input type='submit' name='submit' value='Submit'></p>
 
 	</form>
 
