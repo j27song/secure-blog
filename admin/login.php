@@ -10,6 +10,7 @@ require_once('../includes/config.php');
 <head>
   <meta charset="utf-8">
   <title>Login</title>
+  <h1 align="center">Login Page</h1>
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/main.css">
 </head>
@@ -34,7 +35,8 @@ require_once('../includes/config.php');
 	}//end if submit
 	if(isset($message)){ echo $message; }
 	?>
-
+	<h1 align="center">Login Page</h1>
+  	<hr align="center">
 	<form action="" method="post">
 	<p><label>Username</label><input type="text" name="username" value=""  /></p>
 	<p><label>Password</label><input type="password" name="password" value=""  /></p>
