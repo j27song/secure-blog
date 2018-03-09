@@ -1,9 +1,9 @@
 <?php require('includes/config.php'); 
 $stmt = $db->prepare('SELECT pid, ptitle, pcont, pdate FROM blog_post WHERE pid = :pid');
-$stmt->execute(array(':pID' => $_GET['id']));
+$stmt->execute(array(':pid' => $_GET['id']));
 $row = $stmt->fetch();
 //if post does not exists redirect user.
-if($row['pID'] == ''){
+if($row['pid'] == ''){
 	header('Location: ./');
 	exit;
 }
