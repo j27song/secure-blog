@@ -81,8 +81,8 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 		}
 	}
 		try {
-			$stmt = $db->prepare('SELECT pID, pTitle, pDesc, pCont FROM blog_post WHERE pID = :pID') ;
-			$stmt->execute(array(':pID' => $_GET['id']));
+			$stmt = $db->prepare('SELECT pid, ptitle, pdesc, pcont FROM blog_post WHERE pid = :pid') ;
+			$stmt->execute(array(':pid' => $_GET['id']));
 			$row = $stmt->fetch(); 
 		} catch(PDOException $e) {
 		    echo $e->getMessage();
@@ -90,16 +90,16 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	?>
 
 	<form action='' method='post'>
-		<input type='hidden' name='pID' value='<?php echo $row['pID'];?>'>
+		<input type='hidden' name='pID' value='<?php echo $row['pid'];?>'>
 
 		<p><label>Title</label><br />
-		<input type='text' name='pTitle' value='<?php echo $row['pTitle'];?>'></p>
+		<input type='text' name='pTitle' value='<?php echo $row['ptitle'];?>'></p>
 
 		<p><label>Description</label><br />
-		<textarea name='pDesc' cols='60' rows='10'><?php echo $row['pDesc'];?></textarea></p>
+		<textarea name='pDesc' cols='60' rows='10'><?php echo $row['pdesc'];?></textarea></p>
 
 		<p><label>Content</label><br />
-		<textarea name='pCont' cols='60' rows='10'><?php echo $row['pCont'];?></textarea></p>
+		<textarea name='pCont' cols='60' rows='10'><?php echo $row['pcont'];?></textarea></p>
 
 		<p><input type='submit' name='submit' value='Update'></p>
 

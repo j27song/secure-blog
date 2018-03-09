@@ -5,8 +5,8 @@ require_once('../includes/config.php');
 if(!$user->is_logged_in()){ header('Location: login.php'); }
 //show message from add / edit page
 if(isset($_GET['delpost'])){ 
-	$stmt = $db->prepare('DELETE FROM blog_post WHERE pID = :pID') ;
-	$stmt->execute(array(':pID' => $_GET['delpost']));
+	$stmt = $db->prepare('DELETE FROM blog_post WHERE pid = :pid') ;
+	$stmt->execute(array(':pid' => $_GET['delpost']));
 	header('Location: index.php?action=deleted');
 	exit;
 } 
@@ -49,17 +49,17 @@ if(isset($_GET['delpost'])){
 	</tr>
 	<?php
 		try {
-			$stmt = $db->query('SELECT pID, pTitle, pDate FROM blog_post ORDER BY ptID DESC');
+			$stmt = $db->query('SELECT pid, ptitle, pdate FROM blog_post ORDER BY pid DESC');
 			while($row = $stmt->fetch()){
 				
 				echo '<tr>';
-				echo '<td>'.$row['postTitle'].'</td>';
-				echo '<td>'.date('jS M Y', strtotime($row['pDate'])).'</td>';
+				echo '<td>'.$row['ptitle'].'</td>';
+				echo '<td>'.date('jS M Y', strtotime($row['pdate'])).'</td>';
 				?>
 
 				<td>
-					<a href="edit-post.php?id=<?php echo $row['pID'];?>">Edit</a> | 
-					<a href="javascript:delpost('<?php echo $row['pID'];?>','<?php echo $row['pTitle'];?>')">Delete</a>
+					<a href="edit-post.php?id=<?php echo $row['pid'];?>">Edit</a> | 
+					<a href="javascript:delpost('<?php echo $row['pid'];?>','<?php echo $row['ptitle'];?>')">Delete</a>
 				</td>
 				
 				<?php 
