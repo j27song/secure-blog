@@ -51,6 +51,7 @@ require_once('../includes/config.php');
 	<p><label>Password</label><input type="password" name="password" value=""  /></p>
 	<p><label></label><input type="submit" name="submit" value="Login"  /></p>
 	</form>
+	<a href="reset.php">Forgot Password</a></br>
 	<a href="../index.php">Back to the Main Page</a>
 
 </div>
