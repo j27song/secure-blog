@@ -5,7 +5,8 @@ if(isset($_GET['verifypost'])){
 	$stmt->execute(array(':mid' => $_GET['verifypost']));
 	header('Location: applog.php');
 	exit;
-} 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +84,7 @@ if(isset($_GET['verifypost'])){
 				?>
 
 				<td>
-					<a href="edit-user.php?id=<?php echo $row['mid'];?>">Change password</a> 
+					<a href="edit-user.php?id=<?php echo $row['mid'];?>">Change Password</a> 
 				</td>
 				
 				<?php 
