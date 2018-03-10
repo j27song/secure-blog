@@ -30,14 +30,15 @@ if($user->is_logged_in()){ header('Location: index-logged.php'); }
 			echo '<p>Email:'.$row['email'].'</p>';
 			
 			$ifile = glob("images/*.*");
-			
+			$va = strcmp("images/bear_avatar.png","images/$row['prof_image']");
+			echo $va;
 			for ($i=0; $i<count($ifile); $i++){
 				$im = $ifile[$i];
-				if($im === "images/$row['prof_image']"){
-					$im0 = $im;
-				}
+				//if($im === images/$row['prof_image']){
+					//$im0 = $im;
+				//}
 			}
-			echo '<img src="'.$im0.'" alt="an_avatar"/>'."<br />";
+			echo '<img src="'.$im.'" alt="an_avatar"/>'."<br />";
 			/*
 				while($row){
 					echo '<div>';
